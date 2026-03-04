@@ -1,0 +1,24 @@
+services:
+  jenkins:
+    image: chikegenius/jenkinsdocker:v4
+    container_name: jenkins
+    restart: on-failure
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    networks:
+      - jenkins-custom-network
+    volumes:
+      - /jenkins-storage:/var/jenkins_home
+      - /jenkins-storage/tmp:/tmp
+      - /var/run/docker.sock:/var/run/docker.sock
+      # - /home/charleschiagbaizu/admin.conf:/var/jenkins_home/.kube/config
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - JAVA_OPTS=-Xms512m -Xmx2048m -XX:+UseG1GC -XX:MaxRAMPercentage=75.0
+    entrypoint: ["/usr/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
+
+networks:
+  jenkins-custom-network:
+    driver: bridge

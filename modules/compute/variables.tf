@@ -37,11 +37,26 @@ variable "disk_name" {
 variable "disk_type" {
   description = "The type of the additional disk."
   type        = string
-  default     = "pd-ssd"
+  default     = "pd-balanced"
 }
 
 variable "disk_size" {
   description = "The size of the additional disk in GB."
   type        = number
-  default     = 100
+  default     = 50
+}
+
+variable "network_name" {
+  description = "The name of the network."
+  type        = string
+}
+
+variable "subnet_self_link" {
+  description = "The self link of the subnetwork."
+  type        = string
+}
+
+variable "region" {
+  description = "Instance location"
+  type        = string
 }

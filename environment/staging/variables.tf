@@ -1,4 +1,4 @@
-# --- Artifact Registry ---
+# Artifact Registry
 variable "location" {
   description = "The location of the Artifact Registry repository"
   type        = string
@@ -14,7 +14,7 @@ variable "repository_id" {
   type        = string
 }
 
-# --- Jenkins Compute Instance ---
+# Jenkins Compute Instance
 variable "instance_name" {
   description = "The name of the compute instance."
   type        = string
@@ -40,7 +40,7 @@ variable "boot_disk_size" {
   type        = number
 }
 
-# --- Jenkins Data Disk ---
+# Jenkins Data Disk
 variable "disk_name" {
   description = "The name of the additional disk."
   type        = string
@@ -56,7 +56,7 @@ variable "disk_size" {
   type        = number
 }
 
-# --- Networking ---
+# Network
 variable "network_name" {
   description = "The name of the network to create."
   type        = string
@@ -79,5 +79,30 @@ variable "secondary_ip_cidr_range" {
 
 variable "region" {
   description = "The region where the subnet will be created."
+  type        = string
+}
+
+# GKE Cluster
+variable "project_id" {
+  description = "The ID of the project in which the resource belongs."
+  type        = string
+}
+
+variable "cluster_name" {
+  description = "The name of the GKE cluster."
+  type        = string
+}
+
+variable "cluster_location" {
+  description = "Location of the GKE cluster."
+  type        = string
+}
+variable "node_pool_name" {
+  description = "The name of the GKE node pool."
+  type        = string
+}
+
+variable "node_pool_location" {
+  description = "Location of the GKE node pool."
   type        = string
 }

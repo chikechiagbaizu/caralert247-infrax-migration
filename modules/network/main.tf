@@ -9,6 +9,8 @@ resource "google_compute_subnetwork" "caralert247-staging-subnet1" {
   region        = var.region
   network       = google_compute_network.caralert247-staging-vpc.id
 
+  private_ip_google_access = true
+
   secondary_ip_range {
     range_name    = "gke-pods-range"
     ip_cidr_range = "192.168.0.0/18"

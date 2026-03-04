@@ -1,6 +1,6 @@
 # --- Network Module Pass-through ---
 
-output "vpc_name" {
+output "network_name" {
   description = "The name of the VPC created in the network module"
   value       = module.network.network_name
 }
@@ -12,7 +12,7 @@ output "subnet_name" {
 
 output "subnet_self_link" {
   description = "The URI of the subnetwork"
-  value       = module.network.subnetwork_self_link
+  value       = module.network.subnet_self_link
 }
 
 output "gke_secondary_range_name" {
