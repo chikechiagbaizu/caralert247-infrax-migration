@@ -38,3 +38,9 @@ module "gke" {
   network_name       = module.network.network_name
   subnet_self_link   = module.network.subnet_self_link
 }
+
+module "cloudrun" {
+  source               = "../../modules/cloudrun"
+  caralert247_services = var.caralert247_services
+  cloudrun_region      = var.cloudrun_region
+}
