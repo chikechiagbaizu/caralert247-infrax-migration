@@ -9,3 +9,4 @@
 *.tfplan
 *.tfvars
 *.tfvars.json
+caralert247-gke.conf
