@@ -14,7 +14,7 @@ source "googlecompute" "jenkins_image" {
   ssh_username        = "packer"
   image_name          = "jenkins-golden-image-${formatdate("YYYYMMDD-hhmm", timestamp())}"
   image_family        = "caralert247-jenkins"
-  credentials_file    = "C:/Users/BOBBY/sa-keys/packer-key.json"
+  credentials_file    = ""
 }
 
 build {
